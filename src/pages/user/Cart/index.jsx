@@ -114,9 +114,9 @@ function Cart() {
     const res = await makepayment({ userEmail: email });
 
     if (res.data.sessionUrl) {
+      localStorage.setItem("key","cart");
       window.location.href = res.data.sessionUrl;
       localStorage.setItem("sessionId", res.data.sessionId);
-      localStorage.setItem("key","cart")
     }
   }
 

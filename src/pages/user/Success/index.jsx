@@ -16,7 +16,9 @@ const Success = () => {
     usePlacePaymentSuccessQuery(sessionId,{enabled:sessionId && key === "place-payment"})
   } else navigate("/upevent");
 
-
+ function handleBack(){
+  navigate("/")
+ }
 
   return (
     <div className="text-center d-flex h-100 flex-column justify-content-center align-items-center">
