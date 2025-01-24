@@ -3,7 +3,7 @@ import { Container, Table, Button, Row, Col } from 'react-bootstrap';
 import { useGetPlaceQuery, useViewPaymentQuery } from '../../../services/services';
 import FormModal from '../../../components/AddPlaceModal';
 import {Loader} from '../../../components/Loader';
-import toast from 'react-hot-toast';  
+import {toast} from 'react-toastify';  
 import AmountModal from '../../../components/UnPaidModal';  
 
 export const PlacesAdmin = () => {
@@ -62,7 +62,7 @@ export const PlacesAdmin = () => {
   }, [viewData]); 
   return (
     <>
-      <div className='d-flex justify-content-center mt-5'>
+      <div className='d-flex justify-content-center mt-3'>
         <div style={{ width: '92%' }} className='forheight scroll'>
           <Container fluid className='px-md-4 px-1'>
             <Row className='align-items-center mb-3'>

@@ -406,10 +406,14 @@ export const postsApi = createApi({
     getTotalPayment:builder.query({
       query: () => "/api/payment/event-overview",
     }),
+    placePaymentSuccess:builder.query({
+      query: (sessionId) => "/api/payment/place-payment-all-success?sessionId=${sessionId}",
+    }),
   }),
 });
 
 export const {
+  usePlacePaymentSuccessQuery,
   useViewPaymentQuery,
   useUnPaidPaymentQuery,
   useGetTotalPaymentQuery,

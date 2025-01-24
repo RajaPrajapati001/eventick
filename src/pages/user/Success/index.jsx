@@ -1,25 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { useOrganizerSuccessQuery, useSuccessQuery } from "../../../services/services";
+import { useOrganizerSuccessQuery, useSuccessQuery,useGetOrganizerPaymentSuccessQuery,usePlacePaymentSuccessQuery } from "../../../services/services";
 import { payment } from "../../../assets/Constant";
 import "./style.css";
 
 const Success = () => {
   const navigate = useNavigate();
   const sessionId = localStorage.getItem("sessionId");
-  if (sessionId) {
-    console.log(sessionId);
+  const key=localStorage.getItem("key");
 
-    useSuccessQuery(sessionId);
+  if (sessionId) {
+    useSuccessQuery(sessionId, { enabled: sessionId && key === "cart" });
+    useGetOrganizerPaymentSuccessQuery(sessionId, { enabled: sessionId && key === "get-payment" });
+    useSuccessQuery(sessionId, { enabled: sessionId && key === "event-payment" });
+    usePlacePaymentSuccessQuery(sessionId,{enabled:sessionId && key === "place-payment"})
   } else navigate("/upevent");
 
-  const handleBack = () => {
-    navigate("/");
-  };
 
-  if (sessionId) {
-    useOrganizerSuccessQuery(sessionId);
-  } else navigate("/placeorder");
 
   return (
     <div className="text-center d-flex h-100 flex-column justify-content-center align-items-center">

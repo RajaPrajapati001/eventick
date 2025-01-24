@@ -17,6 +17,7 @@ const ViewModal = ({ show, handleClose, eventData, unpaidAmount }) => {
   if (data) {
     window.location.href = data.paymentUrl;
     localStorage.setItem("sessionId", data.sessionId);
+    localStorage.setItem("key","place-payment")
   }
 
   return (
