@@ -44,9 +44,9 @@ function Footer() {
             <div>
               <h6 className="fw-bold">Eventick</h6>
               <ul className="list-unstyled mt-4">
-                <li className="mb-2"><Link to="/about">About Us</Link> </li>
-                <li className="mb-2"><Link to="/about">Contact US</Link> </li>
-                <li className="mb-2"><Link to="/about">Help Center</Link> </li>
+                <li className="mb-2"><Link to="/about" className="text-decoration-none text-white">About Us</Link> </li>
+                <li className="mb-2"><Link to="/about" className="text-decoration-none text-white">Contact US</Link> </li>
+                <li className="mb-2"><Link to="/about" className="text-decoration-none text-white">Help Center</Link> </li>
                 {/* <li className='mb-2'>How it Works</li>
                             <li className='mb-2'>Privacy</li>
                             <li className='mb-2'>Terms</li> */}
@@ -65,7 +65,7 @@ function Footer() {
         </Row>
         <hr />
         <div className="text-center">
-          <Link to="/">Copyright @ 2024 Event Management Team</Link>
+          <Link to="/ "  className="text-decoration-none text-white">Copyright @ 2024 Event Management Team</Link>
         </div>
       </Container>
     </div>
