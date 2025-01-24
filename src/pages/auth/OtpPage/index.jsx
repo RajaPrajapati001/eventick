@@ -25,7 +25,7 @@ function OtpModal({ showModal, setShowModal, otpData }) {
   const [store] = useStoreDataMutation();
   const [verify, { isLoading }] = useVerifyOtpMutation();
   const [otp, setOtp] = useState("");
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(60);
   const [alertShown, setAlertShown] = useState(false);
   const handleClose = () => setShowModal(false);
   const [loginotp] = useLoginOtpMutation();
@@ -126,7 +126,7 @@ function OtpModal({ showModal, setShowModal, otpData }) {
         if (res.data.attempt <= 3) {
           try {
             setOtp("");
-            setTimer(10);
+            setTimer(60);
           } catch (err) {
             console.error("Failed to resend OTP:", err);
           }
@@ -147,7 +147,7 @@ function OtpModal({ showModal, setShowModal, otpData }) {
         if (res.data.attempt <= 3) {
           try {
             setOtp("");
-            setTimer(10);
+            setTimer(60);
           } catch (err) {
             console.error("Failed to resend OTP:", err);
           }
@@ -168,7 +168,7 @@ function OtpModal({ showModal, setShowModal, otpData }) {
         if (res.data.attempt <= 3) {
           try {
             setOtp("");
-            setTimer(10);
+            setTimer(60);
           } catch (err) {
             console.error("Failed to resend OTP:", err);
           }
