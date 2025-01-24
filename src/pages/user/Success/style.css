@@ -1,0 +1,16 @@
+.text-wrap-custom {
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+.text-color {
+  color: #242565 !important;
+}
+.form-control-custom:focus,
+.input-group-custom:focus-within {
+  box-shadow: none !important;
+  border-color: #242565 !important;
+}
+.card-img-h {
+  height: 200px !important;
+}

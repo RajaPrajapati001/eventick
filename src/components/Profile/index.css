@@ -1,0 +1,16 @@
+.bg-btn-grey {
+  background-color: #a9a8ac !important;
+}
+.text-wrap-custom {
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+.camera-circle {
+  width: 30px;
+  height: 30px;
+}
+.profile-img {
+  width: 110px;
+  height: 110px;
+}
