@@ -87,7 +87,7 @@ function Events() {
           </Row>
         ) : (
           <div className="d-flex flex-column col-12 justify-content-center align-items-center">
-            <h1 className="text-color">No history events available.</h1>
+            <h1 className="text-color">No events available.</h1>
           </div>
         )}
       </div>
