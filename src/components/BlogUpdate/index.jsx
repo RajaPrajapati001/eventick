@@ -10,7 +10,7 @@ import { blog } from "../../schemas";
 
 function BlogUpdate({ show, setShow, blogId }) {
   const { setUpdate } = useContext(AppContext);
-  const [image, setImage] = useState(img);
+  const [image, setImage] = useState(upload);
   const [file, setFile] = useState();
   const fileInputRef = useRef(null);
   const [blogUpdate] = useAdminBlogViewMutation();
