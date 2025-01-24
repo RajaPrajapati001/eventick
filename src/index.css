@@ -9,7 +9,7 @@ body {
   background-color: #f8f9fa !important;
 }
 #bg-linear {
-  background-image: url("./src/assets/auth-bg.png");
+  background-image: url("https://res.cloudinary.com/dlrkct80i/image/upload/v1737696013/auth-bg_fsx7aa.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
