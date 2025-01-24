@@ -135,9 +135,6 @@ input:focus {
 .accordion-button:focus {
   box-shadow: none !important;
 }
-.accordion-button::after {
-  /* content: none !important; */
-}
 .outer-div {
   width: 440px;
   height: 280px;
@@ -154,7 +151,7 @@ input:focus {
   transform: rotate(45deg);
 }
 .heading-background {
-  background-image: url("./src/assets/aboutHead.jpg");
+  background-image: url("https://res.cloudinary.com/dlrkct80i/image/upload/v1737696016/aboutHead_krumwc.jpg");
   background-size: cover;
   background-position: center;
 }
