@@ -1,8 +1,23 @@
-name: hello-world
-on: push
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main  # Main branch par push hone par chalega
+
 jobs:
-  my-job:
+  build-and-push:
     runs-on: ubuntu-latest
+
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build Docker Image
+        run: docker build -t raja517/myrepo:latest .
+
+      - name: Push Docker Image
+        run: docker push raja517/myrepo:latest
