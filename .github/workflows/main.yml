@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Login first
+        uses: aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 034362042597.dkr.ecr.ap-northeast-2.amazonaws.com
 
-      - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: Build image
+        run: docker build -t raja-dev .
 
-      - name: Build Docker Image
-        run: docker build -t raja517/myrepo:latest .
+      - name: Create tag
+        run: docker tag raja-dev:latest 034362042597.dkr.ecr.ap-northeast-2.amazonaws.com/raja-dev:latest
 
       - name: Push Docker Image
-        run: docker push raja517/myrepo:latest
+        run: docker push 034362042597.dkr.ecr.ap-northeast-2.amazonaws.com/raja-dev:latest
 # commit
